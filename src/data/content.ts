@@ -24,11 +24,12 @@ export const content = {
     { year: '2026', title: 'Five Years of Us', text: 'Five beautiful years of friendship, growth, and a million memories. Our story is only beginning.', photo: 'couple' }
   ],
   photos: [
-    { id: 'couple', src: '/media/couple.jpg', title: 'Our Dates', category: 'Special', caption: 'Anywhere with you is my favorite place.' },
+    { id: 'couple', src: '/media/our-rose.jpg', title: 'You, Me & a Rose', category: 'Special', caption: 'Together with a red rose, a little moment just for us.' },
+    { id: 'hands', src: '/media/our-hands.jpg', title: 'Love in Our Hands', category: 'Special', caption: 'Our hands together, with a little heart to keep.', position: '50% 72%' },
     { id: 'coffee', src: '/media/coffee.jpg', title: 'Coffee Moments', category: 'Special', caption: 'Two cups, one very long conversation.' },
     { id: 'flowers', src: '/media/flowers.jpg', title: 'Little Things', category: 'Special', caption: 'The small beautiful things that remind me of you.' },
     { id: 'sea', src: '/media/sea.jpg', title: 'Trips Together', category: 'Trips', caption: 'Chasing sunsets and collecting memories.' },
-    { id: 'us', src: '/media/couple.jpg', title: 'Us', category: 'Special', caption: 'My favorite person, in every season.' },
+    { id: 'us', src: '/media/holding-you.jpg', title: 'Holding On to You', category: 'Special', caption: 'Your hand in mine — my favorite place to be.', position: '50% 65%' },
     { id: 'cake', src: '/media/cake.jpg', title: 'Celebrations', category: 'Celebrations', caption: 'Another candle. Another wish for us.' },
     { id: 'letters', src: '/media/letters.jpg', title: 'Letters & Notes', category: 'Special', caption: 'All the words I saved for you.' },
     { id: 'moon', src: '/media/moon.jpg', title: 'Random Clicks', category: 'Trips', caption: 'Under the same moon, always.' },
