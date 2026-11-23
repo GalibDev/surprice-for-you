@@ -4,7 +4,7 @@ export const content = {
   startDate: '2021-11-24T00:00:00+06:00',
   anniversary: '2026-11-24',
   music: { title: 'A little melody for us', src: '/media/our-song.wav', sample: true },
-  video: { src: '/media/memory-film.mp4', title: 'A little film, a thousand feelings', sample: true },
+  video: { src: '/media/our-memory.mp4', title: 'Our Favorite Memory', poster: '/media/together-in-the-green.jpg', sample: false },
   voice: { src: '/media/voice-message.wav', sample: true },
   letter: [
     'Five years. Somehow, those two little words hold a whole world: our first hello, our late-night conversations, the little adventures, and all the ordinary days you made extraordinary.',
@@ -24,6 +24,7 @@ export const content = {
     { year: '2026', title: 'Five Years of Us', text: 'Five beautiful years of friendship, growth, and a million memories. Our story is only beginning.', photo: 'couple' }
   ],
   photos: [
+    { id: 'together', src: '/media/together-in-the-green.jpg', title: 'Together in the Green', category: 'Special', caption: 'You and me, surrounded by a little green.', position: '50% 38%' },
     { id: 'couple', src: '/media/our-rose.jpg', title: 'You, Me & a Rose', category: 'Special', caption: 'Together with a red rose, a little moment just for us.' },
     { id: 'hands', src: '/media/our-hands.jpg', title: 'Love in Our Hands', category: 'Special', caption: 'Our hands together, with a little heart to keep.', position: '50% 72%' },
     { id: 'coffee', src: '/media/coffee.jpg', title: 'Coffee Moments', category: 'Special', caption: 'Two cups, one very long conversation.' },
