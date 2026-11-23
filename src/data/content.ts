@@ -16,14 +16,17 @@ export const content = {
   finalMessage: 'If I could live these five years again, I would still find you. I would still choose you. Every single time.',
   gift: { title: 'A date, just for us', text: 'This little coupon is good for one sunset walk, your favorite dinner, and an evening with our phones away. You choose the day. I will bring the flowers.' },
   timeline: [
-    { year: '2021', title: 'The Beginning', text: 'A simple hello became the conversation we never wanted to end.', photo: 'moon' },
-    { year: '2022', title: 'Growing Closer', text: 'Shared dreams, coffee dates, and a thousand little reasons to smile.', photo: 'coffee' },
+    { year: '2021', title: 'The Beginning', text: 'A simple hello became the conversation we never wanted to end.', photo: 'beginning' },
+    { year: '2022', title: 'Growing Closer', text: 'Shared dreams, coffee dates, and a thousand little reasons to smile.', photo: 'riverside' },
     { year: '2023', title: 'Choosing Each Other', text: 'Even on the difficult days, we learned to find our way back to us.', photo: 'couple' },
     { year: '2024', title: 'A Deeper Bond', text: 'More patience, more understanding, and a love that felt like home.', photo: 'sea' },
-    { year: '2025', title: 'Through It All', text: 'Side by side through every high and low. My favorite teammate, always.', photo: 'mountains' },
-    { year: '2026', title: 'Five Years of Us', text: 'Five beautiful years of friendship, growth, and a million memories. Our story is only beginning.', photo: 'couple' }
+    { year: '2025', title: 'Through It All', text: 'Side by side through every high and low. My favorite teammate, always.', photo: 'trees' },
+    { year: '2026', title: 'Five Years of Us', text: 'Five beautiful years of friendship, growth, and a million memories. Our story is only beginning.', photo: 'side-by-side' }
   ],
   photos: [
+    { id: 'riverside', src: '/media/riverside-moment.jpg', title: 'A Riverside Moment', category: 'Special', caption: 'A quiet little moment by the water.', position: '50% 35%' },
+    { id: 'trees', src: '/media/under-the-trees.jpg', title: 'Under the Trees', category: 'Special', caption: 'A little sunshine, a little shade, and us.', position: '50% 25%' },
+    { id: 'side-by-side', src: '/media/by-your-side.jpg', title: 'By Your Side', category: 'Special', caption: 'Another beautiful memory, side by side.', position: '75% 40%' },
     { id: 'together', src: '/media/together-in-the-green.jpg', title: 'Together in the Green', category: 'Special', caption: 'You and me, surrounded by a little green.', position: '50% 38%' },
     { id: 'couple', src: '/media/our-rose.jpg', title: 'You, Me & a Rose', category: 'Special', caption: 'Together with a red rose, a little moment just for us.' },
     { id: 'hands', src: '/media/our-hands.jpg', title: 'Love in Our Hands', category: 'Special', caption: 'Our hands together, with a little heart to keep.', position: '50% 72%' },
@@ -64,3 +67,4 @@ export const chapters = [
   { slug: '50-reasons', label: '50 Reasons I Love You', icon: 'heart' }, { slug: 'our-future', label: 'Our Future Together', icon: 'moon' },
   { slug: 'final-surprise', label: 'The Final Surprise', icon: 'gift' }
 ];
+
