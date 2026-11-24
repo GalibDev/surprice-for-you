@@ -3,7 +3,7 @@ export const content = {
   names: { from: 'Galib', to: 'Nabila' },
   startDate: '2021-11-24T00:00:00+06:00',
   anniversary: '2026-11-24',
-  music: { title: 'A little melody for us', src: '/media/our-song.wav', sample: true },
+  music: { title: 'Tere Sang Yaara', src: '/media/tere-sang-yaara.m4a', sample: false },
   video: { src: '/media/our-memory.mp4', title: 'Our Favorite Memory', poster: '/media/together-in-the-green.jpg', sample: false },
   voice: { src: '/media/voice-message.wav', sample: true },
   letter: [
