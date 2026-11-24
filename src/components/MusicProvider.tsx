@@ -5,11 +5,13 @@ import { content } from '@/data/content';
 
 const SONG_START_SECONDS = 45;
 
-const MusicContext = createContext({ playing: false, mediaError: '', volume: 0.5, setVolume: (_value: number) => {}, toggleMusic: () => {} });
+const MusicContext = createContext({ playing: false, mediaError: '', volume: 0.5, setVolume: (_value: number) => {}, toggleMusic: () => {}, pauseMusic: () => {} });
 export const useMusic = () => useContext(MusicContext);
 
 export default function MusicProvider({ children }: { children: React.ReactNode }) {
   const audio = useRef<HTMLAudioElement>(null);
+  const autoStartAllowed = useRef(true);
+  const pauseMusic = () => { autoStartAllowed.current = false; audio.current?.pause(); setNeedsTap(false); };
   const [playing, setPlaying] = useState(false);
   const [mediaError, setMediaError] = useState('');
   const [needsTap, setNeedsTap] = useState(false);
@@ -34,6 +36,7 @@ export default function MusicProvider({ children }: { children: React.ReactNode 
       document.removeEventListener('keydown', retry);
     };
     const attempt = () => {
+      if (!autoStartAllowed.current) return;
       void player.play().then(() => {
         waitingForGesture = false;
         setMediaError('');
@@ -64,7 +67,7 @@ export default function MusicProvider({ children }: { children: React.ReactNode 
     }
   };
 
-  return <MusicContext.Provider value={{ playing, mediaError, volume, setVolume, toggleMusic }}>
+  return <MusicContext.Provider value={{ playing, mediaError, volume, setVolume, toggleMusic, pauseMusic }}>
     <audio ref={audio} src={`${content.music.src}#t=${SONG_START_SECONDS}`} autoPlay preload="auto"
       onLoadedMetadata={event => { event.currentTarget.currentTime = SONG_START_SECONDS; }}
       onPlay={event => {

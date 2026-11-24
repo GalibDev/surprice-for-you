@@ -5,7 +5,7 @@ export const content = {
   anniversary: '2026-11-24',
   music: { title: 'Tere Sang Yaara', src: '/media/tere-sang-yaara.m4a', sample: false },
   video: { src: '/media/our-memory.mp4', title: 'Our Favorite Memory', poster: '/media/together-in-the-green.jpg', sample: false },
-  voice: { src: '/media/voice-message.wav', sample: true },
+  voice: { src: '/media/galib-voice-message.m4a', sample: false },
   letter: [
     'Five years. Somehow, those two little words hold a whole world: our first hello, our late-night conversations, the little adventures, and all the ordinary days you made extraordinary.',
     'Thank you for being my safe place. For understanding the things I struggle to say. For your patience, your laughter, and the quiet ways you show up for me.',
