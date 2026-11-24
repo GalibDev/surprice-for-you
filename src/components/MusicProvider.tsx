@@ -3,6 +3,8 @@
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { content } from '@/data/content';
 
+const SONG_START_SECONDS = 45;
+
 const MusicContext = createContext({ playing: false, mediaError: '', volume: 0.5, setVolume: (_value: number) => {}, toggleMusic: () => {} });
 export const useMusic = () => useContext(MusicContext);
 
@@ -63,7 +65,18 @@ export default function MusicProvider({ children }: { children: React.ReactNode 
   };
 
   return <MusicContext.Provider value={{ playing, mediaError, volume, setVolume, toggleMusic }}>
-    <audio ref={audio} src={content.music.src} autoPlay loop preload="auto" onPlay={() => { setPlaying(true); setNeedsTap(false); }} onPause={() => setPlaying(false)} onError={() => setMediaError('Our song could not load. Please try again.')} />
+    <audio ref={audio} src={`${content.music.src}#t=${SONG_START_SECONDS}`} autoPlay preload="auto"
+      onLoadedMetadata={event => { event.currentTarget.currentTime = SONG_START_SECONDS; }}
+      onPlay={event => {
+        if (event.currentTarget.currentTime < SONG_START_SECONDS) event.currentTarget.currentTime = SONG_START_SECONDS;
+        setPlaying(true); setNeedsTap(false);
+      }}
+      onEnded={event => {
+        const player = event.currentTarget;
+        player.currentTime = SONG_START_SECONDS;
+        void player.play().catch(() => { setPlaying(false); setNeedsTap(true); });
+      }}
+      onPause={() => setPlaying(false)} onError={() => setMediaError('Our song could not load. Please try again.')} />
     {needsTap && !playing && <button className="music-start-banner" data-music-control onClick={toggleMusic}>♫ Play our song <span>Tere Sang Yaara · Tap to turn on music</span></button>}
     {children}
   </MusicContext.Provider>;
